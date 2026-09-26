@@ -95,8 +95,17 @@ From the README's own ToS analysis (OpenRouter ToS, 2026-08-31):
 - Any App Store listing must stay clearly unofficial.
 
 There is no Harbor backend, by design. `OpenRouterService` talks directly to
-`https://openrouter.ai/api/v1` and sends the user's own key. Adding a proxy
-server to this app would violate §7 and is out of scope.
+`https://openrouter.ai/api/v1` and sends the user's own key.
+
+**These are the owner's stated positions, quoted from the README — not settled
+law, and not mine to reinterpret.** The README already reasons about §7 and §12
+and accepts the residual risk; the short version is that §7 prohibits
+*conduct* (reselling access, building a competing service) rather than proxies as
+such, and §12 covers OpenRouter's Materials, which is why the logo and wordmark
+are off-limits while matching a general visual direction is not obviously the
+same act. If you think either reading is wrong, that is a conversation for the
+owner — raise it, do not silently rewrite the constraint or quietly add a proxy
+server.
 
 ## Keychain invariants
 
