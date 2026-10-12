@@ -53,3 +53,29 @@ Geometric grotesque, system fallback: SF Pro for UI, SF Mono for prices/tokens/m
 ## Mark
 
 Harbor uses a distinct unofficial mark: a simple gap in a circle (a harbor mouth), not an OR monogram. Never the OpenRouter logo.
+
+## Program pass (2026-10-11)
+
+Status: audit and proposal. No app code was changed because the app cannot be built or screenshotted on this machine.
+
+**Direction name:** Harbor Mouth (monochrome, hairline, one gap).
+
+**Logo proposal** (owner signs off): `assets/brand/` holds an SVG of the existing `HarborMark` geometry (300 degree arc, round caps), a dark variant and a wordmark. It is monochrome by design and is not the OpenRouter logo.
+
+**Contrast audit** (WCAG, computed):
+
+| Pair | Ratio | AA text (4.5) |
+|---|---|---|
+| text-muted `#9ca3af` on bg | 8.27 | pass |
+| text-body `#d4d4d4` on surface | 12.74 | pass |
+| text `#ffffff` on surface-elevated | 17.4 | pass |
+| danger `#ef4444` on surface | 5.02 | pass |
+| success `#22c55e` on bg | 9.22 | pass |
+| text-faint `#6b7280` on bg | 4.34 | **fail** |
+| text-faint `#6b7280` on surface | 3.91 | **fail** |
+
+Proposed `faint` replacement: `#7c8493` (5.58 on bg, 5.02 on surface, 4.62 on elevated). Tracked as ROADMAP P3.
+
+**Motion:** none beyond SwiftUI defaults; respect Reduce Motion for any streaming-text animation.
+
+**Note on section 12:** the README quotes OpenRouter ToS section 12 on design materials; the "feel like OpenRouter" principle above should be reviewed (ROADMAP P4).
