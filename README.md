@@ -1,4 +1,9 @@
-# Harbor
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/brand/wordmark-dark.svg">
+    <img alt="Harbor" src="assets/brand/wordmark.svg" height="64">
+  </picture>
+</p>
 
 **Unofficial** native iOS client for [OpenRouter](https://openrouter.ai). Not affiliated with, endorsed, or sponsored by OpenRouter, Inc.
 
@@ -30,4 +35,26 @@ Chat, model picker, streaming, credits/usage. Not a competing aggregator.
 
 ## Status
 
-Repo is a stub until Cursor on-demand can land the SwiftUI skeleton and a full `DESIGN.md` reconstructed from the live site (Jul 2026 Bauhaus refresh). See `DESIGN.md` for tokens.
+SwiftUI sources for a chat view, model picker, credits view and Keychain-backed key entry exist under `Harbor/` (19 files). There is **no Xcode project or Swift package yet**, so the app does not build, and there are no tests or CI. Building needs a Mac with the iOS SDK; on Linux only a syntax check (`swiftc -parse`) is possible. See [ROADMAP.md](ROADMAP.md).
+
+## How it works
+```text
+ConnectKeyView -> Keychain (this-device-only, when unlocked) -> OpenRouterService
+   -> https://openrouter.ai/api/v1  (/models, /credits, chat)  -> ChatView / ModelPickerView / CreditsView
+```
+No Harbor backend sits in between.
+
+## Screenshots
+TODO: needs a Mac or simulator build (see Status).
+
+## Quick start
+Not available until the project file exists (ROADMAP P1). Planned: open `Harbor.xcodeproj`, run on a simulator, paste an OpenRouter key on the connect screen.
+
+## Design and brand
+[DESIGN.md](DESIGN.md). The logo in `assets/brand/` is a proposal pending owner sign-off.
+
+## Contributing
+Issues and PRs welcome. Never ship under the name "OpenRouter"; keep BYOK-only.
+
+## Licence
+See [LICENSE](LICENSE).
